@@ -1,0 +1,39 @@
+The following test cases should result in ‘Balance’:
+""
+()
+()[]{}
+{[()]}
+{[()()]()}
+((({{[[]]}})))
+[({(())}[()])]
+{}([]{})
+
+The following test cases should result in ‘Mismatch’:
+(]
+{)
+([)]
+{[()])}
+[{()}](]
+{(})
+[({)]}
+{[}]
+
+The following test cases should result in ‘Lack Closing’:
+(
+(((
+{[(
+([]
+{[({})]
+((()[{}]
+({[]({[]})[]}
+(()[]{})[{
+
+The following test cases should result in ‘Lack Opening’:
+)
+]
+}
+())
+{}])
+{[()]}]
+()[]{}}}
+]]}))
