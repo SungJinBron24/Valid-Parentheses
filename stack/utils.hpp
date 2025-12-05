@@ -16,19 +16,16 @@ namespace adt {
                 if (s[i] == '(' || s[i] == '{' || s[i] == '[') {
                     stack->push(s[i]);
                 } else {
-                    if ((stack->top() == '(' && s[i] == ')') || (stack->top() == '{' && s[i] == '}')
-                    || (stack->top() == '[' && s[i] == ']')) {
-                        stack->pop();
-                    } else if ((stack->isEmpty() && s[i] == ')') || (stack->isEmpty() && s[i] == '}')
-                    || (stack->isEmpty() && s[i] == ']')) {
-                        result = 3;
-                        delete stack;
-                        return result;
-                    } else if ((stack->top() == '(' && s[i] != ')') || (stack->top() == '{' && s[i] != '}')
-                    || (stack->top() == '[' && s[i] != ']')) {
+                    if ((stack->top() == '(' && s[i] != ')') || (stack->top() == '{' && s[i] != '}')|| (stack->top() == '[' && s[i] != ']')) {
                         result = 1;
                         delete stack;
                         return result;
+                    } else if ((stack->isEmpty() && s[i] == ')') || (stack->isEmpty() && s[i] == '}')|| (stack->isEmpty() && s[i] == ']')) {
+                        result = 3;
+                        delete stack;
+                        return result;
+                    } else {
+                        stack->pop();
                     }
                 }
             }

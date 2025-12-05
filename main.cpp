@@ -4,8 +4,6 @@
 #include "stack/utils.hpp"
 
 using namespace std;
-using namespace adt;
-
 
 int main(void) {
     string parentheses;
